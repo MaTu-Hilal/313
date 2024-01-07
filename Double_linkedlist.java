@@ -392,6 +392,7 @@ public class Double_linkedlist {
 					while(ptr.next.next!=null)
 						ptr = ptr.next;
 					ptr.next = null;
+					System.out.println("******Item Deleted Successfully**********");
 				}
 				
 	/**************************************************************/			
@@ -409,6 +410,7 @@ public class Double_linkedlist {
 					if(ptr==start) {
 						ptr = ptr.next;
 						ptr.prev = null;
+						start = ptr;
 						System.out.println("******Item Deleted Successfully**********");
 						return;
 					}
@@ -443,12 +445,15 @@ public class Double_linkedlist {
 						return;
 					}
 					ptr = start;
-					for(int i=1;i<=(mid-1);i++) {
+					for(int i=1;i<=(mid-2);i++) {
 						ptr = ptr.next;
 					}
 					Node ptr1 = ptr.next;
 					ptr.next = ptr1.next;
-					ptr1.next.prev = ptr;
+					 if (ptr1.next != null) {
+					        ptr1.next.prev = ptr;
+					}
+					System.out.println("******Item Deleted Successfully**********");
 				}	
 
 }
