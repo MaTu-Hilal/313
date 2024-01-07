@@ -20,10 +20,9 @@ public class Menu {
 			case 2:
 				Double_linkedlist dll = new Double_linkedlist();
 				break;
-			}
+		}
 		}
 		while(choice!=3);
-
 	}
 
 }

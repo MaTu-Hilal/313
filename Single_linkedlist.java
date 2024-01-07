@@ -160,7 +160,7 @@ public class Single_linkedlist {
 			static void Insertion_InMiddle_BGN(int SItem,int item) {
 				
 				Node ptr = start;
-				while(ptr!=null && ptr.info!=SItem)
+				while((ptr!=null) && (ptr.info!=SItem))
 					ptr = ptr.next;
 				if(ptr==null) {
 					System.out.println("Required item not found.");
@@ -187,7 +187,7 @@ public class Single_linkedlist {
 			static void Insertion_InMiddle_AGN(int SItem,int item) {
 				
 				Node ptr = start;
-				while(ptr!=null && ptr.info!=SItem)
+				while((ptr!=null) && (ptr.info!=SItem))
 					ptr = ptr.next;
 				if(ptr==null) {
 					System.out.println("Required item not found.");
@@ -207,19 +207,21 @@ public class Single_linkedlist {
 			static void Insertion_InMiddle_Exact_Mid_BGN_SLL(int item){
 				int count = 0;
 				Node ptr1 = start;
-				while(ptr1!=null)
+				while(ptr1!=null) {
 					count = count+1;
+					ptr1 = ptr1.next;
+				}
 				int mid = (count/2)+1;
 				Node ptr = new Node(item);
 				ptr.info = item;
 				
-				if(count==0 || count==1) {
+				if((count==0) || (count==1)){
 					ptr.next = start;
 					start = ptr;
 					return;
 				}
 				Node ptr2 = start;
-				for(int i=1;i<mid-2;i++) {
+				for(int i=1;i<=(mid-2);i++) {
 					ptr2 = ptr2.next;
 				}
 				ptr.next = ptr2.next;
@@ -233,8 +235,10 @@ public class Single_linkedlist {
 			static void Insertion_InMiddle_Exact_Mid_AGN_SLL(int item){
 				int count = 0;
 				Node ptr1 = start;
-				while(ptr1!=null)
+				while(ptr1!=null) {
 					count = count+1;
+					ptr1 = ptr1.next;
+				}
 				int mid = (count/2);
 				Node ptr = new Node(item);
 				ptr.info = item;
@@ -245,7 +249,7 @@ public class Single_linkedlist {
 					return;
 				}
 				Node ptr2 = start;
-				for(int i=1;i<mid-1;i++) {
+				for(int i=1;i<=(mid-1);i++) {
 					ptr2 = ptr2.next;
 				}
 				ptr.next = ptr2.next;
@@ -387,8 +391,10 @@ public class Single_linkedlist {
 			static void Deletion_InMiddle_ExactMiddleNode_Sll() {
 				int count = 0;
 				Node ptr = start;
-				while(ptr!=null)
+				while(ptr!=null) {
 					count = count+1;
+					ptr = ptr.next;
+				}
 				int mid = (count/2)+1;
 				
 				if(count==0) {
@@ -401,7 +407,7 @@ public class Single_linkedlist {
 					return;
 				}
 				ptr = start;
-				for(int i=1;i<mid-2;i++) {
+				for(int i=1;i<=(mid-1);i++) {
 					ptr = ptr.next;
 				}
 				Node ptr1 = ptr.next;

@@ -100,6 +100,8 @@ public class Double_linkedlist {
 								case 4:
 									Deletion_InMiddle_ExactMiddleNode_Dll();
 									break;
+								default:
+									System.out.println("Invalid Input");
 									}
 								break;
 						}
@@ -165,7 +167,7 @@ public class Double_linkedlist {
 				static void Insertion_InMiddle_BGN(int SItem,int item) {
 					
 					Node ptr = start;
-					while(ptr!=null && ptr.info!=SItem)
+					while((ptr!=null) && (ptr.info!=SItem))
 						ptr = ptr.next;
 					if(ptr==null) {
 						System.out.println("Required item not found.");
@@ -190,7 +192,7 @@ public class Double_linkedlist {
 				static void Insertion_InMiddle_AGN(int SItem,int item) {
 					
 					Node ptr = start;
-					while(ptr!=null && ptr.info!=SItem)
+					while((ptr!=null) && (ptr.info!=SItem))
 						ptr = ptr.next;
 					if(ptr==null) {
 						System.out.println("Required item not found.");
@@ -213,8 +215,10 @@ public class Double_linkedlist {
 				static void Insertion_InMiddle_Exact_Mid_BGN_DLL(int item){
 					int count = 0;
 					Node ptr1 = start;
-					while(ptr1!=null)
+					while(ptr1!=null) {
 						count = count+1;
+						ptr1 = ptr1.next;
+					}
 					int mid = (count/2)+1;
 					Node ptr = new Node(item);
 					ptr.info = item;
@@ -249,8 +253,10 @@ public class Double_linkedlist {
 				static void Insertion_InMiddle_Exact_Mid_AGN_DLL(int item){
 					int count = 0;
 					Node ptr1 = start;
-					while(ptr1!=null)
+					while(ptr1!=null) {
 						count = count+1;
+						ptr1 = ptr1.next;
+					}
 					int mid = (count/2);
 					Node ptr = new Node(item);
 					ptr.info = item;
@@ -421,8 +427,10 @@ public class Double_linkedlist {
 				static void Deletion_InMiddle_ExactMiddleNode_Dll() {
 					int count = 0;
 					Node ptr = start;
-					while(ptr!=null)
+					while(ptr!=null) {
 						count = count+1;
+						ptr = ptr.next;
+					}
 					int mid = (count/2)+1;
 					
 					if(count==0) {
@@ -435,7 +443,7 @@ public class Double_linkedlist {
 						return;
 					}
 					ptr = start;
-					for(int i=1;i<mid-2;i++) {
+					for(int i=1;i<=(mid-1);i++) {
 						ptr = ptr.next;
 					}
 					Node ptr1 = ptr.next;
